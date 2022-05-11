@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <link href="{{ url_for('static', filename='mystyle.css') }}" rel="stylesheet">
+
+
+    <title>어쩔~~쓰레기</title>
+
+    <meta property="og:title" content="어쩔쓰레기"/>
+    <meta property="og:description" content="생활 속 쓰레기! 정확한 재활용으로 환경을 지켜요"/>
+    <meta property="og:image" content="{{ url_for('static', filename='로고.png') }}"/>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='logo.png') }}" type="image/x-icon">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <style>
+        * {
+            font-family: 'Nanum Pen Script', cursive;
+            font-size: 25px;
+        }
+
+        .mytitle {
+            background-color: transparent;
+
+            width: 100%;
+            height: 200px;
+
+        }
+
+        .logo {
+            background-color: transparent;
+            width: 500px;
+            height: 200px;
+        }
+
+
+        .btn {
+            float: right;
+            margin: 5px;
+        }
+
+
+        .box::after {
+            clear: both;
+            content: '';
+            display: block;
+        }
+
+        .box1 {
+            margin: 10px 20px 20px 20px;
+        }
+
+        .box2 {
+            float: right;
+            box-sizing: border-box;
+            border: 2px solid;
+            width: 100%;
+            height: 500px;
+            width: 635px;
+
+
+            display: table-cell;
+            vertical-align: middle;
+
+            border-radius: 20px;
+            padding: 30px;
+
+
+        }
+
+        .box3 {
+            float: right;
+            box-sizing: border-box;
+            border: 2px solid;
+            width: 100%;
+            height: 500px;
+            width: 500px;
+
+
+            display: table-cell;
+            vertical-align: middle;
+
+            border-radius: 20px;
+        }
+
+        .wrap {
+            margin: 20px auto 0px auto;
+            width: 100%;
+            width: 1200px;
+            height: 500px;
+
+        }
+
+        .img-file {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 20px;
+        }
+
+        .box {
+
+            width: 1400px;
+            padding: 10px;
+            border-radius: 20px;
+            text-align: center;
+            display: table;
+            float: left;
+            box-sizing: border-box;
+            border: 2px solid darkslategrey;
+            width: 100%;
+            margin-bottom: 20px;
+
+
+        }
+
+        .comment-box {
+            width: 1200px;
+            padding: 10px;
+            border-radius: 20px;
+            text-align: center;
+            display: table;
+            box-sizing: border-box;
+            border: 2px solid darkslategrey;
+            margin-left: 681px;
+            height: 100px;
+            margin-top: 23px;
+            width: 95%;
+            max-width: 1200px;
+            padding: 20px;
+
+
+        }
+
+        .comment-box2 {
+            width: 1200px;
+            border-radius: 20px;
+            text-align: center;
+            display: table;
+
+            box-sizing: border-box;
+            border: 1px solid darkslategrey;
+            margin-left: 681px;
+            height: 40px;
+
+            width: 95%;
+            max-width: 1200px;
+
+
+        }
+
+        .list {
+            margin: 50px auto;
+        }
+
+
+        .btn-dark {
+            margin: 0px 20px 0px 0px;
+
+
+        }
+
+        .form-floating {
+            width: 1100px;
+            margin: 20px auto;
+
+        }
+
+        body {
+
+            min-height: 100vh;
+
+        }
+
+        .section {
+
+            max-width: 750px;
+            width: 100%;
+            margin: auto;
+        }
+
+        .is-sparta {
+            color: #e8344e !important;
+        }
+
+        .button.is-sparta {
+            background-color: #e8344e;
+            border-color: transparent;
+            color: #fff !important;
+        }
+
+        .button.is-sparta.is-outlined {
+            background-color: transparent;
+            border-color: #e8344e;
+            color: #e8344e !important;
+        }
+
+        .modal-content {
+            width: 600px;
+            max-width: 80%;
+        }
+
+        input::-webkit-calendar-picker-indicator {
+            display: none;
+        }
+
+        .image img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+        .input{
+
+
+        }
+
+
+
+    </style>
+    <script>
+        $(document).ready(function () {
+            set_temp()
+            show_comment()
+        });
+
+        function save_comment() {
+            let comment = $('#comment').val()
+
+
+            $.ajax({
+                type: 'POST',
+                url: '/detail',
+                data: {comment_give: comment},
+                success: function (response) {
+                    alert(response['msg'])
+                    window.location.reload()
+                }
+            })
+        }
+
+        function show_comment() {
+            $.ajax({
+                type: "GET",
+                url: "/homework",
+                data: {},
+                success: function (response) {
+                    let rows = response['visits']
+                    for (let i = 0; i < rows.length; i++) {
+                        let name = rows[i]['name']
+                        let comment = rows[i]['comment']
+
+                        let temp_html = `<div class="card">
+                                            <div class="card-body">
+                                                <blockquote class="blockquote mb-0">
+                                                    <p>${comment}</p>
+                                                    <footer class="blockquote-footer">${name}</footer>
+                                                </blockquote>
+                                            </div>
+                                        </div>`
+                        $(`#comment-list`).append(temp_html)
+                    }
+
+
+                }
+            });
+        }
+
+    </script>
+</head>
+<body>
+<div class="mytitle">
+    <img class="logo" src="/static/로고.PNG" height="298" width="695"/>
+    <ul class="btn">
+
+        <button type="button" onclick="location.href='login'" class="btn btn-outline-secondary">로그인/회원가입</button>
+
+        </button>
+        <button type="button" onclick="sign_out()" class="btn btn-outline-secondary">로그아웃</button>
+
+    </ul>
+    <div class="wrap">
+        <div class="box">
+            <h1>♻녹차</h1>
+            <P>👍</P>
+            <div class="box1">
+                <div class="box2">
+                    <div class="list">
+                        <li>분리배출요약</li>
+                        <p>
+                            1. 후추 용기 - 캔류
+                            2. 뚜껑 - 플라스틱
+                        </p>
+                        <li>쓰레기 분리 배출법</li>
+                        <p>
+                            1. 후추 용기 내부에 내용물이 없도록 비웁니다<br>
+                            2. 용기와 뚜껑에 오염된 부분이 없도록 세척합니다<br>
+                            3. 용기와 뚜껑을 분리합니다<br>
+                            4. 분리한 뚜껑은 플라스틱으로 배출합니다<br>
+                            5. 용기는 캔류로 배출합니다<br>
+                        </p>
+
+                    </div>
+
+
+                </div>
+                <div class="box3"><img class="img-file"
+                                       src="https://sitem.ssgcdn.com/46/26/61/item/0000006612646_i1_1200.jpg" alt="">
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+
+<section class="section">
+    <article class="media">
+        <figure class="media-left" style="align-self: center">
+
+        </figure>
+        <div class="media-content">
+            <div class="field">
+                <p class="control">
+                    <input id="input-post" class="input is-rounded" placeholder="무슨 생각을 하고 계신가요?"
+                           onclick='$("#modal-post").addClass("is-active")'></p>
+            </div>
+        </div>
+    </article>
+</section>
+
+
+</body>
+</html>

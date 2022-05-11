@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+
+    <title>어쩔~~쓰레기</title>
+
+    <meta property="og:title" content="어쩔쓰레기"/>
+    <meta property="og:description" content="생활 속 쓰레기! 정확한 재활용으로 환경을 지켜요"/>
+    <meta property="og:image" content="{{ url_for('static', filename='로고.png') }}"/>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='logo.png') }}" type="image/x-icon">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+
+    <style>
+        .wrap {
+            margin: 20px auto 0px auto;
+            width: 95%;
+            max-width: 1600px;
+        }
+
+        .form-floating {
+            margin-top: 10px;
+        }
+
+        .btn {
+            padding-left: 761px;
+            padding-right: 761px;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <h1>관리자 글 작성</h1>
+    <div class="form-floating mb-3">
+        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <label for="floatingInput">대분류</label>
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">image url</label>
+        </div>
+        <div class="form-floating">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+            <label for="floatingPassword">상품이름</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">상품 설명</label>
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">image url</label>
+
+                <div class="form-floating">
+    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+              style="height: 100px"></textarea>
+                    <label for="floatingTextarea2">제활용설명</label>
+                </div>
+            </div>
+            <button type="button" class="btn btn-secondary">Secondary</button>
+
+
+</body>
+</html>
