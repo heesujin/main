@@ -1,348 +1,392 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>어쩔쓰레기 | 세상을 더 깨끗하게</title>
+
+    <!-- Bootstrap JQuery-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
             crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
 
-    <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-    <link href="{{ url_for('static', filename='mystyle.css') }}" rel="stylesheet">
+    <!-- Bulma CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
+    <script src="https://kit.fontawesome.com/ab1be9cf0f.js" crossorigin="anonymous"></script>
 
-    <title>어쩔~~쓰레기</title>
+    <link href="{{ url_for('static', filename='detail.css') }}" rel="stylesheet">
 
-    <meta property="og:title" content="어쩔쓰레기"/>
-    <meta property="og:description" content="생활 속 쓰레기! 정확한 재활용으로 환경을 지켜요"/>
-    <meta property="og:image" content="{{ url_for('static', filename='로고.png') }}"/>
-    <link rel="shortcut icon" href="{{ url_for('static', filename='logo.png') }}" type="image/x-icon">
-    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
-    <style>
-        * {
-            font-family: 'Nanum Pen Script', cursive;
-            font-size: 25px;
-        }
-
-        .mytitle {
-            background-color: transparent;
-
-            width: 100%;
-            height: 200px;
-
-        }
-
-        .logo {
-            background-color: transparent;
-            width: 500px;
-            height: 200px;
-        }
+    <!-- Font Awesome CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Stylish&display=swap" rel="stylesheet">
 
 
-        .btn {
-            float: right;
-            margin: 5px;
-        }
-
-
-        .box::after {
-            clear: both;
-            content: '';
-            display: block;
-        }
-
-        .box1 {
-            margin: 10px 20px 20px 20px;
-        }
-
-        .box2 {
-            float: right;
-            box-sizing: border-box;
-            border: 2px solid;
-            width: 100%;
-            height: 500px;
-            width: 635px;
-
-
-            display: table-cell;
-            vertical-align: middle;
-
-            border-radius: 20px;
-            padding: 30px;
-
-
-        }
-
-        .box3 {
-            float: right;
-            box-sizing: border-box;
-            border: 2px solid;
-            width: 100%;
-            height: 500px;
-            width: 500px;
-
-
-            display: table-cell;
-            vertical-align: middle;
-
-            border-radius: 20px;
-        }
-
-        .wrap {
-            margin: 20px auto 0px auto;
-            width: 100%;
-            width: 1200px;
-            height: 500px;
-
-        }
-
-        .img-file {
-            max-width: 100%;
-            max-height: 100%;
-            border-radius: 20px;
-        }
-
-        .box {
-
-            width: 1400px;
-            padding: 10px;
-            border-radius: 20px;
-            text-align: center;
-            display: table;
-            float: left;
-            box-sizing: border-box;
-            border: 2px solid darkslategrey;
-            width: 100%;
-            margin-bottom: 20px;
-
-
-        }
-
-        .comment-box {
-            width: 1200px;
-            padding: 10px;
-            border-radius: 20px;
-            text-align: center;
-            display: table;
-            box-sizing: border-box;
-            border: 2px solid darkslategrey;
-            margin-left: 681px;
-            height: 100px;
-            margin-top: 23px;
-            width: 95%;
-            max-width: 1200px;
-            padding: 20px;
-
-
-        }
-
-        .comment-box2 {
-            width: 1200px;
-            border-radius: 20px;
-            text-align: center;
-            display: table;
-
-            box-sizing: border-box;
-            border: 1px solid darkslategrey;
-            margin-left: 681px;
-            height: 40px;
-
-            width: 95%;
-            max-width: 1200px;
-
-
-        }
-
-        .list {
-            margin: 50px auto;
-        }
-
-
-        .btn-dark {
-            margin: 0px 20px 0px 0px;
-
-
-        }
-
-        .form-floating {
-            width: 1100px;
-            margin: 20px auto;
-
-        }
-
-        body {
-
-            min-height: 100vh;
-
-        }
-
-        .section {
-
-            max-width: 750px;
-            width: 100%;
-            margin: auto;
-        }
-
-        .is-sparta {
-            color: #e8344e !important;
-        }
-
-        .button.is-sparta {
-            background-color: #e8344e;
-            border-color: transparent;
-            color: #fff !important;
-        }
-
-        .button.is-sparta.is-outlined {
-            background-color: transparent;
-            border-color: #e8344e;
-            color: #e8344e !important;
-        }
-
-        .modal-content {
-            width: 600px;
-            max-width: 80%;
-        }
-
-        input::-webkit-calendar-picker-indicator {
-            display: none;
-        }
-
-        .image img {
-            object-fit: cover;
-            width: 100%;
-            height: 100%;
-        }
-        .input{
-
-
-        }
-
-
-
-    </style>
     <script>
+        // 페이지 로드 되자마자 댓글들 가지고 오는 함수
         $(document).ready(function () {
-            set_temp()
-            show_comment()
-        });
-
-        function save_comment() {
-            let comment = $('#comment').val()
+            get_comments({{ item_info.num }})
 
 
+            let temp_html = `{{ item_info.exp }}`
+            console.log(temp_html)
+            $("#exp-list").append(temp_html)
+        })
+
+        function login_notice() {
+            alert('로그인을 해야합니다.')
+        }
+
+        function delete_notice() {
+            $("#delete").hide()
+        }
+
+        function sign_out() {
+            $.removeCookie('mytoken', {path: '/'});
+            alert('로그아웃!')
+            window.location.href = "/"
+        }
+
+        // 댓글 저장을 위한 ajax call
+        function post(item_num) {
+            let comment = $("#textarea-post").val()
+            let today = new Date().toISOString()
+            let num = item_num
             $.ajax({
-                type: 'POST',
-                url: '/detail',
-                data: {comment_give: comment},
+                type: "POST",
+                url: "/posting",
+                data: {
+                    comment_give: comment,
+                    date_give: today,
+                    num_give: num
+                },
                 success: function (response) {
-                    alert(response['msg'])
+                    $("#modal-post").removeClass("is-active") // 성공하면 Modal을 닫는다.
                     window.location.reload()
                 }
             })
         }
 
-        function show_comment() {
+        // 저장된 댓글을 불러오기 위한 ajax call
+        function get_comments(item_num) {
+            if (item_num == undefined) {
+                item_num = ""
+            }
+            $("#post-box").empty()
             $.ajax({
                 type: "GET",
-                url: "/homework",
+                url: `/get_comments?num_give=${item_num}`,
                 data: {},
                 success: function (response) {
-                    let rows = response['visits']
-                    for (let i = 0; i < rows.length; i++) {
-                        let name = rows[i]['name']
-                        let comment = rows[i]['comment']
+                    if (response["status"] == "login") {
 
-                        let temp_html = `<div class="card">
-                                            <div class="card-body">
-                                                <blockquote class="blockquote mb-0">
-                                                    <p>${comment}</p>
-                                                    <footer class="blockquote-footer">${name}</footer>
-                                                </blockquote>
+                        let posts = response["posts"]
+
+                        for (let i = 0; i < posts.length; i++) {
+                            let post = posts[i]
+                            let time_post = new Date(post["date"])
+                            let time_before = time2str(time_post)
+                            let class_heart = post['heart_by_me'] ? "fa-heart" : "fa-heart-o"
+                            let count_heart = post['count_heart']
+
+                            let html_temp = `<div class="box" id="${post["_id"]}">
+                            <article class="media">
+                                <div class="media-left">
+                                    <a class="image is-64x64" href="/user/${post['username']}">
+                                        <img class="is-rounded" src="/static/${post['profile_pic_real']}" alt="Image">
+                                    </a>
+                                </div>
+                                <div class="media-content">
+                                    <div class="content">
+                                        <p>
+                                            <strong>${post['profile_name']}</strong> <small>@${post['username']}</small> <small>${time_before}</small>
+                                            <br>
+                                            ${post['comment']}
+                                        </p>
+                                    </div>
+                                    <nav class="level is-mobile">
+                                        <div class="level-left">
+                                            <a class="level-item is-sparta" aria-label="heart" onclick="toggle_like('${post['_id']}', 'heart')">
+                                                <span class="icon is-small"><i class="fa ${class_heart}" aria-hidden="true"></i></span>&nbsp;
+                                                <span class="like-num">${num2str(count_heart)}</span>
+                                            </a>
+                                        </div>
+                                    </nav>
+                                </div>
+                            </article>
+                        </div>`
+                            $("#post-box").append(html_temp)
+                        }
+
+                    } else {
+                        let posts = response["posts"]
+
+                        for (let i = 0; i < posts.length; i++) {
+                            let post = posts[i]
+                            let time_post = new Date(post["date"])
+                            let time_before = time2str(time_post)
+                            let count_heart = post['count_heart']
+
+                            let html_temp = `<div class="box" id="${post["_id"]}>
+                                <article class="media">
+                                    <div class="media-left">
+                                        <a class="image is-64x64" onclick="login_notice()">
+                                            <img class="is-rounded" src="/static/${post['profile_pic_real']}" alt="Image">
+                                        </a>
+                                    </div>
+                                    <div class="media-content">
+                                        <div class="content">
+                                            <p>
+                                                <strong>${post['profile_name']}</strong> <small>@${post['username']}</small> <small>${time_before}</small>
+                                                <br>
+                                                ${post['comment']}
+                                            </p>
+                                        </div>
+                                        <nav class="level is-mobile">
+                                            <div class="level-left">
+                                                <a class="level-item is-sparta" aria-label="heart" onclick="login_notice()">
+                                                    <span class="icon is-small"><i class="fa fa-heart" aria-hidden="true"></i></span>&nbsp;
+                                                    <span class="like-num">${num2str(count_heart)}</span>
+                                                </a>
                                             </div>
-                                        </div>`
-                        $(`#comment-list`).append(temp_html)
+                                        </nav>
+                                    </div>
+                                </article>
+                            </div>`
+                            $("#post-box").append(html_temp)
+                        }
                     }
-
-
                 }
-            });
+            })
         }
 
+        function toggle_like(post_id, type) {
+            console.log(post_id, type)
+            let $a_like = $(`#${post_id} a[aria-label='heart']`)
+            let $i_like = $a_like.find("i")
+
+            if ($i_like.hasClass("fa-heart")) {
+                $.ajax({
+                    type: "POST",
+                    url: "/update_like",
+                    data: {
+                        post_id_give: post_id,
+                        type_give: type,
+                        action_give: "unlike"
+                    },
+                    success: function (response) {
+                        console.log("unlike")
+                        $i_like.addClass("fa-heart-o").removeClass("fa-heart")
+                        $a_like.find("span.like-num").text(num2str(response["count"]))
+                    }
+                })
+            } else {
+                $.ajax({
+                    type: "POST",
+                    url: "/update_like",
+                    data: {
+                        post_id_give: post_id,
+                        type_give: type,
+                        action_give: "like"
+                    },
+                    success: function (response) {
+                        console.log("like")
+                        $i_like.addClass("fa-heart").removeClass("fa-heart-o")
+                        $a_like.find("span.like-num").text(num2str(response["count"]))
+                    }
+                })
+
+            }
+        }
+
+        // 댓글 쓴 이후 얼마나 시간이 지났는지 계산하는 함수
+        function time2str(date) {
+            let today = new Date()
+            let time = (today - date) / 1000 / 60  // 분
+
+            if (time < 60) {
+                return parseInt(time) + "분 전"
+            }
+            time = time / 60  // 시간
+            if (time < 24) {
+                return parseInt(time) + "시간 전"
+            }
+            time = time / 24
+            if (time < 7) {
+                return parseInt(time) + "일 전"
+            }
+            return `${date.getFullYear()}년 ${date.getMonth() + 1}월 ${date.getDate()}일`
+        }
+
+        // 좋아요 갯수 계산하는 함수
+        function num2str(count) {
+            if (count > 10000) {
+                return parseInt(count / 1000) + "k"
+            }
+            if (count > 500) {
+                return parseInt(count / 100) / 10 + "k"
+            }
+            if (count == 0) {
+                return ""
+            }
+            return count
+        }
     </script>
+
 </head>
 <body>
-<div class="mytitle">
-    <img class="logo" src="/static/로고.PNG" height="298" width="695"/>
-    <ul class="btn">
+    <div class="mytitle">
+        <a href="/"><img class="logo" src="/static/logo.png"/></a>
+        {% if status %}
+            <ul class="btn">
+                <span class="nickname"><h1>"{{ user_info.username }}"님 반갑습니다.</h1></span>
+                <!-- <button type="button" class="btn btn-outline-dark" onclick="sign_out()">로그아웃</button> -->
+                <a class="button level-item has-text-centered is-sparta is-outlined" aria-label="logout" onclick="sign_out()">
+                    로그아웃&nbsp;&nbsp;&nbsp;<span class="icon is-small"><i class="fa fa-sign-out" aria-hidden="true"></i></span>
+                </a>
+            </ul>
+        {% else %}
+            <ul class="btn">
+                <a href="/login">
+                    <button type="button" class="btn btn-outline-dark">로그인하기</button>
+                </a>
+            </ul>
+        {% endif %}
+    </div>
+    <div><h1 align="center" class="main_title">♻녹차</h1></div>
+    <div class="main_box">
 
-        <button type="button" onclick="location.href='login'" class="btn btn-outline-secondary">로그인/회원가입</button>
-
-        </button>
-        <button type="button" onclick="sign_out()" class="btn btn-outline-secondary">로그아웃</button>
-
-    </ul>
-    <div class="wrap">
-        <div class="box">
-            <h1>♻녹차</h1>
-            <P>👍</P>
-            <div class="box1">
-                <div class="box2">
-                    <div class="list">
-                        <li>분리배출요약</li>
-                        <p>
-                            1. 후추 용기 - 캔류
-                            2. 뚜껑 - 플라스틱
-                        </p>
-                        <li>쓰레기 분리 배출법</li>
-                        <p>
-                            1. 후추 용기 내부에 내용물이 없도록 비웁니다<br>
-                            2. 용기와 뚜껑에 오염된 부분이 없도록 세척합니다<br>
-                            3. 용기와 뚜껑을 분리합니다<br>
-                            4. 분리한 뚜껑은 플라스틱으로 배출합니다<br>
-                            5. 용기는 캔류로 배출합니다<br>
-                        </p>
-
-                    </div>
-
-
-                </div>
-                <div class="box3"><img class="img-file"
-                                       src="https://sitem.ssgcdn.com/46/26/61/item/0000006612646_i1_1200.jpg" alt="">
-
-                </div>
+        <div class="img_box">
+            <img id="img" width="400px" height="400px" class="image-box" src="{{ item_info.img }}">
+        </div>
+        <div class="explain_box">
+            <div id="exp-list">
             </div>
-
         </div>
     </div>
-
-</div>
-
-
-<section class="section">
-    <article class="media">
-        <figure class="media-left" style="align-self: center">
-
-        </figure>
-        <div class="media-content">
-            <div class="field">
-                <p class="control">
-                    <input id="input-post" class="input is-rounded" placeholder="무슨 생각을 하고 계신가요?"
-                           onclick='$("#modal-post").addClass("is-active")'></p>
+    <div id="name" class="product_name">
+    </div>
+    <hr style="border: solid 1px black">
+    {% if status %}
+    <!-- 글 쓰는 섹션 -->
+    <section class="section">
+        <article class="media">
+            <figure class="media-left" style="align-self: center">
+                <a class="image is-32x32" href="">
+                    <img class="is-rounded" src="{{ url_for('static', filename=user_info.profile_pic_real) }}">
+                </a>
+            </figure>
+            <div class="media-content">
+                <div class="field">
+                    <p class="control">
+                        <input id="input-post" class="input is-rounded" placeholder="무슨 생각을 하고 계신가요?"
+                               onclick='$("#modal-post").addClass("is-active")'></p>
+                </div>
             </div>
-        </div>
-    </article>
-</section>
+        </article>
 
+        <!-- Modal -->
+        <div class="modal" id="modal-post">
+            <div class="modal-background" onclick='$("#modal-post").removeClass("is-active")'></div> <!-- 바깥쪽 영역을 클릭했을 때 -->
+            <div class="modal-content">
+                <div class="box">
+                    <article class="media">
+                        <div class="media-content">
+                            <div class="field">
+                                <p class="control">
+                                    <textarea id="textarea-post" class="textarea"
+                                              placeholder="무슨 생각을 하고 계신가요?"></textarea>
+                                </p>
+                            </div>
+                            <nav class="level is-mobile">
+                                <div class="level-left">
+
+                                </div>
+                                <div class="level-right">
+                                    <div class="level-item">
+                                        <a class="button is-sparta" onclick="post({{ item_info.num }})">포스팅하기</a>
+                                    </div>
+                                    <div class="level-item">
+                                        <a class="button is-sparta is-outlined"
+                                           onclick='$("#modal-post").removeClass("is-active")'>취소</a> <!-- 취소버튼 눌렀을 때 -->
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            <button class="modal-close is-large" aria-label="close"
+                    onclick='$("#modal-post").removeClass("is-active")'></button> <!-- X 버튼 눌렀을 때 -->
+        </div>
+    </section>
+    {% endif %}
+
+    {% if status == False %}
+    <!-- 로그인 하라는 공지 -->
+    <div class="notification is-info" id="delete">
+        <button class="delete" onclick="delete_notice()"></button>
+        댓글 기능은 로그인이 필요합니다.
+    </div>
+    {% endif %}
+
+    <!--post box 섹션 -->
+    <section class="section">
+        <div id="post-box" class="container">
+
+            <!-- Script로 대체되는 부분 -->
+            <div class="box">
+                <article class="media">
+                    <div class="media-left">
+                        <a class="image is-64x64" href="#">
+                            <img class="is-rounded"
+                                 src={{ url_for("static", filename="profile_pics/profile_placeholder.png") }} alt="Image">
+                        </a>
+                    </div>
+                    <div class="media-content">
+                        <div class="content">
+                            <p>
+                                <strong>홍길동</strong> <small>@username</small> <small>10분 전</small>
+                                <br>
+                                글을 적는 칸
+                            </p>
+                        </div>
+                        <nav class="level is-mobile">
+                            <div class="level-left">
+                                <a class="level-item is-sparta" aria-label="heart"
+                                   onclick="toggle_like('', 'heart')">
+                                    <span class="icon is-small"><i class="fa fa-heart"
+                                                                   aria-hidden="true"></i></span>&nbsp;<span
+                                        class="like-num">2.7k</span>
+                                </a>
+                            </div>
+
+                        </nav>
+                    </div>
+                </article>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- <div class="comment_box">
+        <div class="mb-3">
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">내용을 입력하세요</textarea>
+        </div>
+        <div class="save_btn">
+            <button type="button" class="btn btn-outline-success">댓글달기</button>
+        </div>
+    </div> -->
 
 </body>
 </html>
