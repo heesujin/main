@@ -168,7 +168,8 @@ input::-webkit-calendar-picker-indicator {
     /*display: flex;*/
     text-align: center;
     align: "center";
-    margin-bottom: 20px;
+    margin-bottom: 20px;                                    <span class="icon is-small"><i class="fa fa-heart"
+
 }
 hr{
     margin-right: auto;
@@ -177,5 +178,8 @@ hr{
     width: 900px;
     margin-top: 80px;
 
+}
+.fa{
+    color: red;
 }
 
